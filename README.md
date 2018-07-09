@@ -1,0 +1,2 @@
+# mainix
+cryptocurrency miner monitoring
