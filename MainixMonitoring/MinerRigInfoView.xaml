@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="MainixMonitoring.MinerRigInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:MainixMonitoring"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <sys:Double x:Key="gridHeight">30</sys:Double>
+        <sys:Double x:Key="gridWidth">270</sys:Double>
+        <sys:Double x:Key="textBoxWidth">140</sys:Double>
+        <Thickness x:Key="gridMargin" Top="5" Bottom="5" Right="5" Left="5" />
+    </UserControl.Resources>
+    <Grid Name="mainGrid_">
+        <StackPanel Orientation="Vertical">
+            <Grid Height="{StaticResource gridHeight}" Width="{StaticResource gridWidth}" Margin="{StaticResource gridMargin}">
+                <Label Content="- Name" />
+                <TextBox Name="nameTb_" Width="{StaticResource textBoxWidth}" 
+                         Controls:TextBoxHelper.Watermark="minerName1"
+                         HorizontalAlignment="Right" />
+            </Grid>
+            <Grid Height="{StaticResource gridHeight}" Width="{StaticResource gridWidth}" Margin="{StaticResource gridMargin}">
+                <Label Content="- UserID" />
+                <TextBox Name="userIDTb_" Width="{StaticResource textBoxWidth}" 
+                         Controls:TextBoxHelper.Watermark="mainixuser1"
+                         HorizontalAlignment="Right" />
+            </Grid>
+            <Grid Height="{StaticResource gridHeight}" Width="{StaticResource gridWidth}" Margin="{StaticResource gridMargin}">
+                <Label Content="- IP" />
+                <TextBox Name="ipTb_" Width="{StaticResource textBoxWidth}" 
+                         Controls:TextBoxHelper.Watermark="192.168.0.1"
+                         HorizontalAlignment="Right" />
+            </Grid>
+            <Grid Height="{StaticResource gridHeight}" Width="{StaticResource gridWidth}" Margin="{StaticResource gridMargin}">
+                <Label Content="- Miner" />
+                <ComboBox Name="minerCb_" Width="{StaticResource textBoxWidth}" HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+                                  SelectedItem="{Binding MinerType_}"
+                                  ItemsSource="{Binding Source={StaticResource minerTypeEnum}}"
+                                  />
+            </Grid>
+            <Grid Height="{StaticResource gridHeight}" Width="{StaticResource gridWidth}" Margin="{StaticResource gridMargin}">
+                <Label Content="- Port" />
+                <TextBox Name="portTb_" Width="{StaticResource textBoxWidth}" 
+                         Controls:TextBoxHelper.Watermark="3333"
+                         HorizontalAlignment="Right" />
+            </Grid>
+            <Grid Height="{StaticResource gridHeight}" Width="{StaticResource gridWidth}" Margin="{StaticResource gridMargin}">
+                <Label Content="- OSType" />
+                <ComboBox Name="ostypeCb_" Width="{StaticResource textBoxWidth}" HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+                                  SelectedItem="{Binding OSType_}"
+                                  ItemsSource="{Binding Source={StaticResource osTypeEnum}}"
+                                  />
+            </Grid>
+            <Grid Height="{StaticResource gridHeight}" Width="{StaticResource gridWidth}" Margin="{StaticResource gridMargin}">
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="okBtn_" Width="50" Content="OK" Click="OKButton_Click" Margin="{StaticResource gridMargin}" />
+                    <Button Name="testBtn_" Width="50" Content="Test" Click="TestButton_Click" Margin="{StaticResource gridMargin}" />
+                    <Button Width="50" Content="Cancel" IsCancel="True" Click="CancelButton_Click" Margin="{StaticResource gridMargin}" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
