@@ -1,5 +1,5 @@
 # Mainix
-[Mainix](http://www.montrix.co.kr/mainix) is an open source (GPL v3) C# based Desktop Application For cryptocurrency Miner Monitoring.
+[Mainix](http://www.montrix.co.kr/mainix) is an open source (GPL v3) C# based Desktop Application For Cryptocurrency Miner Monitoring.
 
 
 ## Release
